@@ -17,6 +17,5 @@ def get_sql_response(file):
 
 
 if __name__ == '__main__':
-    response = get_sql_response("queries/query_4.sql")
+    response = get_sql_response("queries/query_9.sql")
     pprint.pp(response)
-

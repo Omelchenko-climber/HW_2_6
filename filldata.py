@@ -55,9 +55,14 @@ def prepare_date(students, groups, teachers, grades, subjects):
         for_subjects.append((sub, i % 4 if i % 4 != 0 else 4))
 
     for_grades = []
-    for i in range(1, len(students) + 1):
-        for _ in range(grades):
-            for_grades.append((i, randint(1,len(subjects)), randint(1, 12), fake_data.date_between(start_date=datetime(2024, 1, 1))))
+    # for _ in range(1, grades + 1):
+    for i in range(1, len(subjects) + 1):
+        for j in range(1, len(groups) + 1):
+            random_date = fake_data.date_between(start_date=datetime(2024, 1, 1))
+            for i, student in enumerate(for_students, 1):
+                _, group = student
+                if j == group:
+                    for_grades.append((i, randint(1,len(subjects)), randint(1, 12), random_date))
 
     return for_students, for_groups, for_teachers, for_grades, for_subjects
 
