@@ -2,7 +2,7 @@
 DROP TABLE IF EXISTS groups;
 CREATE TABLE groups (
     id integer PRIMARY KEY AUTOINCREMENT,
-    number integer NOT NULL
+    group_number integer NOT NULL
 );
 
 
@@ -10,7 +10,7 @@ CREATE TABLE groups (
 DROP TABLE IF EXISTS students;
 CREATE TABLE students (
     id INTEGER PRIMARY KEY AUTOINCREMENT,
-    name text NOT NULL,
+    student_name text NOT NULL,
     group_id integer NOT NULL,
     FOREIGN KEY (group_id) REFERENCES groups (id)
 );
@@ -20,7 +20,7 @@ CREATE TABLE students (
 DROP TABLE IF EXISTS teachers;
 CREATE TABLE teachers (
     id integer PRIMARY KEY AUTOINCREMENT,
-    name text NOT NULL
+    teacher_name text NOT NULL
 );
 
 
@@ -35,8 +35,8 @@ CREATE TABLE subjects (
 
 
 --Table: grades
-DROP TABLE IF EXISTS student_grade;
-CREATE TABLE student_grade (
+DROP TABLE IF EXISTS grades;
+CREATE TABLE grades (
     student_id integer NOT NULL,
     subject_id integer NOT NULL,
     grade integer NOT NULL,
