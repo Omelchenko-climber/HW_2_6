@@ -95,11 +95,6 @@ def insert_into_db(students, groups, teachers, grades, subjects):
 
 if __name__ == '__main__':
 
-    # students, groups, teachers, grades, subjects = prepare_date(STUDENTS, NUMBER_GROUPS, TEACHERS, NUMBER_GRADES, SUBJECTS)
-    #
-    # insert_into_db(students, groups, teachers, grades, subjects)
+    students, groups, teachers, grades, subjects = prepare_date(STUDENTS, NUMBER_GROUPS, TEACHERS, NUMBER_GRADES, SUBJECTS)
 
-    def func(*args):
-        return args
-
-    print(func())
+    insert_into_db(students, groups, teachers, grades, subjects)
